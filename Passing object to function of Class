@@ -1,0 +1,44 @@
+// CPP Progrma to pass object as argument to the function of the class
+// Program to display the complex number .
+
+
+#include <iostream>
+using namespace std;
+
+class emp
+{
+    int a;
+    int b;
+
+public:
+    void assign(int n1, int n2)
+    {
+        a = n1;
+        b = n2;
+    }
+
+    void sum(emp e1, emp e2)
+    {
+        a = e1.a + e2.a;
+        b = e1.b + e2.b;
+    }
+
+    void display()
+    {
+        cout << "comples no. : " << a << " + " << b << "i\n";
+    }
+};
+
+int main()
+{
+    emp obj1, obj2, obj3;
+
+    obj1.assign(1, 2);
+    obj1.display();
+
+    obj2.assign(3, 4);
+    obj2.display();
+
+    obj3.sum(obj1, obj2);
+    obj3.display();
+}
