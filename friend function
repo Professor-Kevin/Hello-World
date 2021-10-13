@@ -1,6 +1,6 @@
 // program to demonstrate friend funciton more deeply
 // friend functino can be used to provide permission to fucntion of the other calss
-// friend function is also used to give premission to another class
+// friend function is also used to give premission to another class   syntax  friend class class_name;
 
 #include <iostream>
 using namespace std;
