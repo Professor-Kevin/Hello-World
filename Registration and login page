@@ -1,0 +1,85 @@
+// Registration and login page
+
+#include <iostream>
+using namespace std;
+
+class control_pannel
+{
+    string username;
+    string password;
+
+public:
+    void home_page2()
+    {
+        cout << " ----------------->> HOME PAGE  <<----------------------";
+    }
+
+    void registration()
+    {
+        string email, pass1, pass2;
+        cout << "\n -------------->> Registration Page  <<-------------------\n\n";
+        cout << " Your email: ";
+        cin >> email;
+        cout << "\nEnter password: ";
+        cin >> pass1;
+        cout << "\nReEnter password: ";
+        cin >> pass2;
+        if (pass1 == pass2)
+        {
+            password = pass1;
+        }
+        else
+        {
+            cout << "Password did not matched.\n";
+            registration();
+        }
+        username = email;
+        cout<<"\n Registration Succesfull";
+        cout<<"\n\n your username:"<<username;
+        cout<<"\n your password: "<<password;
+        login();
+    }
+
+    void login()
+    {
+        cout << "\n --------------->> Login Page  <<----------------------\n\n";
+        cout << "Username: ";
+        cin >> username;
+        cout << "Password: ";
+        cin >> password;
+
+        if (username == username && password == password)
+        {
+            home_page2();
+        }
+        else
+        {
+            cout << "Invalid Credentials";
+            login();
+        }
+    }
+
+    void home_page1()
+    {
+        string n;
+        cout << "\n--------->>  Wellcome to the world fastest growing software company. <<---------\n";
+        cout<<"------------------------------------------------------------------------------------------\n\n";
+        cout << "Already a user --- LOGIN  Press l. \nNew User ---REGISTRATION  Press r \n";
+        cin >> n;
+        if (n == "l")
+        {
+            login();
+        }
+        else if(n == "r")
+            {
+                registration();
+            }
+        else cout << "Invalid Selection.";
+    }
+};
+
+int main()
+{
+    control_pannel user;
+    user.home_page1();
+}
