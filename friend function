@@ -1,0 +1,41 @@
+// program to demonstrate friend funciton more deeply
+// friend functino can be used to provide permission to fucntion of the other calss
+// friend function is also used to give premission to another class
+
+#include <iostream>
+using namespace std;
+
+class number;
+
+class add
+{
+public:
+    int sum(number, number);
+};
+
+class number
+{
+    int n;
+    friend int add ::sum(number, number);
+
+public:
+    void display(int m)
+    {
+        n = m;
+    }
+};
+
+int add ::sum(number a, number b)
+{
+    return (a.n + b.n);
+}
+
+int main()
+{
+    number obj, obj1;
+    obj.display(1);
+    obj1.display(2);
+    add c;
+    int d = c.sum(obj, obj1);
+    cout << d;
+}
