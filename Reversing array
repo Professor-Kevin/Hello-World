@@ -5,11 +5,11 @@ int main()
     int A[5] = {1, 2, 3, 4, 5};
     int N = 5;
     int j = 0;
-    int B[5];
+    int Temp[5];
 
     for (int i = 0; i < N; i++)
     {
-        B[j] = A[i];
+        Temp[j] = A[i];
         j++;
     }
 
@@ -17,7 +17,7 @@ int main()
 
     for (int i = 0; i < N; i++)
     {
-        A[i] = B[j];
+        A[i] = Temp[j];
         j--;
     }
 
