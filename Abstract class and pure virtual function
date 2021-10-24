@@ -1,0 +1,47 @@
+// abstract class and pure virtual fucntion, pointer of the base class , object of the derived class.
+
+#include<iostream>
+using namespace std;
+
+class Head_office{
+    protected:                                            //Abstract base class
+        string name = "Abhi Sharma";
+        string id = "1";
+    public:
+        virtual void setdata(string name, string id){
+            this->name = name;
+            this->id = id;
+        }
+        virtual void getdata() = 0;       // pure virtual function
+
+};
+
+class campus : public Head_office{
+    string salary;
+    string position;
+    public:
+        void setdata(string salary, string position){
+            this->salary = salary;
+            this->position = position;
+        }
+        void getdata(){
+            cout<<name<<" is at position "<<position<<" and his salary is "<<salary<<" with id no. "<<id;
+        }
+};
+
+int main()
+{
+    Head_office *emp;        // pointer of the base class
+    campus c_obj;           // object of the class;
+    
+    emp = &c_obj;
+
+    emp->setdata("10000", "Head Ececutive");
+    emp->getdata();
+
+    char *ch = new char[10];
+    ch[0] = 'A';
+    cout<<ch;
+
+    return 0;
+}
