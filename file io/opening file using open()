@@ -1,0 +1,39 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+    ofstream obj;
+    obj.open("abc.txt");
+    
+    if (obj.is_open()){
+        obj<<"1>  is_open() used in counter, it checks whetehr the file is open or not"<<endl;
+    }
+    obj.close();
+
+    // opening file in append mode and writing data in  it;
+
+    ofstream obj2;
+    obj2.open("abc.txt", ios::app);
+    obj2<<"2> ios::app is used to open file in append mode. This will append data in the end of the file.";
+    obj2<<endl<<"3> ios::ate is used to open file and the pointer is at the end of the file";
+    obj2.close();
+
+    // opening file using open mode and writing data in  it;
+    ifstream obj3;
+    string str;
+    obj3.open("abc.txt");
+    // obj3>>str;              // this will print only the first word of the file;
+    getline(obj3, str);         // this will print first line of the file;
+
+    // to print all the data in the file,   we have to make a loop;
+    while(!obj3.eof()){          // eof is the end of the file. it returns True or 1 when it reaches at end of file
+        getline(obj3, str);
+        cout<<str<<endl;
+    }
+    cout<<str;
+    return 0;
+}
+
+// !obj3.eof()   <--->      obj3.eof() != 1
+// becoz it return 1 when there is no data left to read. And loop will end when it retuns 1;
