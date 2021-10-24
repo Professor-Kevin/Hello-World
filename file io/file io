@@ -1,0 +1,27 @@
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main()
+{
+
+    //  opening and writing file using oftream with constructor
+
+    string str = "I am a programmer";           
+    ofstream out("1.txt");
+    out<<str;
+    out.close();            // closr the file.
+
+
+ // opening and reading file using iftream with constructor
+
+    ifstream in("1.txt");
+    string strr;
+    in>>strr;                   // this will take only first word of the file
+
+    // getline(in,str);        // this will take line of the file
+
+    cout<<strr;
+    in.close();
+
+    return 0;
+}
