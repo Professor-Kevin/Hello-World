@@ -1,0 +1,27 @@
+#include<iostream>
+#include<string>
+
+using namespace std;
+int main()
+{    
+    string str = "Abhi sharma is a coder.";
+    
+    // printing the string 
+    string :: iterator i;
+    for ( i = str.begin(); i != str.end(); i++)
+    {
+        cout<<*i;
+    }
+
+cout<<endl;
+
+    // printing the reverse string
+    string :: reverse_iterator j;
+    for ( j = str.rbegin(); j !=str.rend(); j++)
+    {
+        cout<<*j;
+    }
+    
+    
+    return 0;
+}
