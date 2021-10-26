@@ -1,0 +1,3 @@
+1>  is_open() used in counter, it checks whetehr the file is open or not
+2> ios::app is used to open file in append mode. This will append data in the end of the file.
+3> ios::ate is used to open file and the pointer is at the end of the file
